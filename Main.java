@@ -34,6 +34,7 @@ public class Main {
         Stream<Person> stream2 = persons.stream();
         List<String> familiesList = stream2
                 .filter(p -> p.getAge() >= 18 && p.getAge() <= 27)
+                .filter(p -> p.getSex() == Sex.MAN)
                 .map(Person::getFamily)
                 .collect(Collectors.toList());
         print.accept(familiesList);
